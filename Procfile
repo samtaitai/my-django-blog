@@ -1,1 +1,3 @@
-web: gunicorn djangogirls.wsgi
+web: gunicorn djangogirls.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
